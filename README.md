@@ -2,7 +2,8 @@
 remise du 3e devoir - moissonnage des données 
 
 # coding : utf-8 
-# faire dérouler le code HTML de la page d'accueil de l'hebdo : l'oeil régional 
+
+#faire dérouler le code HTML de la page d'accueil de l'hebdo : l'oeil régional 
 
 from bs4 import BeautifulSoup 
 import requests
