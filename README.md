@@ -1,8 +1,4 @@
-# Devoir3-
-remise du 3e devoir - moissonnage des données 
-
 # coding : utf-8 
-
 #faire dérouler le code HTML de la page d'accueil de l'hebdo : l'oeil régional 
 
 from bs4 import BeautifulSoup 
@@ -38,4 +34,18 @@ for nombre in nombres:
 
 print(page)
 
+#trouver le  nom de l'auteur du texte "LDT et les Chiefs à une victoire du Super Bowl"
 
+fichier = "loeil_regional.csv"
+
+url = "https://www.oeilregional.com/ldt-et-les-chiefs-a-une-victoire-du-super-bowl/"
+
+entetes = {"User-Agent" : "Catherine Savoie - requête acheminée dans le cadre d'un cours de journalisme de données",
+"From":"savoiesoccer@hotmail.com" 
+}
+
+contenu = requests.get(url, headers=entetes)
+
+page = BeautifulSoup(contenu.text, "htmlparser")
+
+print(page.find("div", class_="name")).a.text 
